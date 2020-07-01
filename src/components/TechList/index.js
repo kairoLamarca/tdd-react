@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { addTech } from '../../store/modules/techs/actions';
+
 // import { Container } from './styles';
 
 export default function TechList() {
@@ -24,7 +26,7 @@ export default function TechList() {
 
   function handleAddTech() {
     // setTechs([...techs, newTech]);
-    dispatch({type: 'ADD_TECH', payload: { tech: newTech }});
+    dispatch(addTech(newTech));
 
     setNewTech(''); 
   }
